@@ -18,4 +18,4 @@
 * logistic-regression： 用C++实现的一个简单逻辑回归模型
 * seg-hmm： 用Python实现了基于HMM的分词模型 blog: https://www.cnblogs.com/xlturing/p/8467033.html
 * seg-ngram： 用Python实现了基于1-gram的分词模型 blog: http://www.cnblogs.com/xlturing/p/8467021.html
-* this is a test in
+* this is a test in web
