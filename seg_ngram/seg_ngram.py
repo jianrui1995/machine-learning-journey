@@ -9,14 +9,21 @@ class Segmentation:
     total = 0
 
     def __init__(self, dict_path):
+        '''
+        :param dict_path:字典的位置
+
+        '''
+
         with open(dict_path, "rb") as f:
             count = 0
             for line in f:
                 try:
+                    # 清除空白字符
                     line = line.strip().decode('utf-8')
                     word, freq = line.split()[:2]
                     freq = int(freq)
                     self.wfreq[word] = freq
+                    #词的大小
                     for idx in range(len(word)):
                         wfrag = word[:idx + 1]
                         if wfrag not in self.wfreq:
@@ -41,6 +48,13 @@ class Segmentation:
         buf = ''
         lseg = []
         while x < N:
+            #从第一个字开始读取，y等于第一个字的route的第二个位置+1，第一个切词就是x~y-1，
+            # 判断l_word是不是一个单独的字母数字，
+            #   是：则放到buf中，继续读y的位置，
+            #   不是：
+            #       如果buf不为空：
+            #           那么buf加上空格方法分词的结果里面。
+            #       将l_word放入分词结果。
             y = route[x][1] + 1
             l_word = sentence[x:y]
             if self.re_eng.match(l_word) and len(l_word) == 1:
