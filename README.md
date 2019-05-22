@@ -19,3 +19,4 @@
 * seg-hmm： 用Python实现了基于HMM的分词模型 blog: https://www.cnblogs.com/xlturing/p/8467033.html
 * seg-ngram： 用Python实现了基于1-gram的分词模型 blog: http://www.cnblogs.com/xlturing/p/8467021.html
 * this is a git
+
