@@ -50,10 +50,11 @@ class Segmentation:
         while x < N:
             #从第一个字开始读取，y等于第一个字的route的第二个位置+1，第一个切词就是x~y-1，
             # 判断l_word是不是一个单独的字母数字，
-            #   是：则放到buf中，继续读y的位置，
+            #   是：
+            #       则放到buf中，继续读y的位置，
             #   不是：
             #       如果buf不为空：
-            #           那么buf加上空格方法分词的结果里面。
+            #           那么buf加上空格方法分词的结果里面。buf清空。
             #       将l_word放入分词结果。
             y = route[x][1] + 1
             l_word = sentence[x:y]
